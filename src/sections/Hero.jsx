@@ -2,6 +2,7 @@ import React from "react";
 import imgProfile from "../assets/Imagens/GabrielBlack.png";
 import ButtonsSocial from "../components/ButtonsSocial";
 import AnimatedCounter from "../components/AnimatedCounter";
+import curriculo from "../../public/curriculo.pdf";
 
 function Hero() {
   return (
@@ -24,7 +25,12 @@ function Hero() {
             </div>
 
             <div className="flex flex-wrap items-center justify-center w-full gap-6 pt-6 desktop1:justify-start ">
-              <button className="flex gap-2 items-center bg-primary hover:bg-secondary  hover:scale-110 transition-all duration-300 px-6 py-2 rounded-full border border-secondary text-secondary hover:text-primary hover:border-primary cursor-pointer">
+              <a
+                href={curriculo}
+                download="Curriculo_Gabriel_Souza.pdf"
+                aria-label="Currículo de Gabriel"
+                className="flex gap-2 items-center bg-primary hover:bg-secondary  hover:scale-110 transition-all duration-300 px-6 py-2 rounded-full border border-secondary text-secondary hover:text-primary hover:border-primary cursor-pointer"
+              >
                 Baixar Currículo{" "}
                 <span>
                   <svg
@@ -44,7 +50,7 @@ function Hero() {
                     <path d="m7 10 5 5 5-5" />
                   </svg>
                 </span>
-              </button>
+              </a>
               <div className="flex gap-8">
                 <ButtonsSocial
                   icon={
@@ -64,6 +70,7 @@ function Hero() {
                       <path d="M9 18c-4.51 2-5-2-7-2" />
                     </svg>
                   }
+                  link="https://github.com/BiellSouza"
                 />
                 <ButtonsSocial
                   icon={
@@ -84,6 +91,7 @@ function Hero() {
                       <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                     </svg>
                   }
+                  link="https://www.instagram.com/biel.souza.904/"
                 />
                 <ButtonsSocial
                   icon={
@@ -104,13 +112,14 @@ function Hero() {
                       <circle cx="4" cy="4" r="2" />
                     </svg>
                   }
+                  link="https://www.linkedin.com/in/gabriel-souza-b9945929a/"
                 />
               </div>
             </div>
           </div>
         </div>
 
-        <div className="relative max-w-[350px] desktop1:max-w-full flex items-center justify-center">
+        <div className="relative w-[80%] max-w-[350px] desktop1:max-w-full flex items-center justify-center">
           <svg
             className="absolute inset-0 w-full h-full animate-spin-slow"
             viewBox="0 0 100 100"
