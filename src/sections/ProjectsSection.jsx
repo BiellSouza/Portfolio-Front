@@ -37,7 +37,7 @@ export default function ProjectsSection() {
   };
 
   return (
-    <section className="py-[96px] relative">
+    <section className="py-[96px] relative" id="trabalhos">
       <h2 className="text-3xl font-bold text-white mb-8 text-center desktop1:text-start">
         Projetos
       </h2>

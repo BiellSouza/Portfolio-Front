@@ -30,7 +30,10 @@ export default function Service() {
   ];
 
   return (
-    <section className=" text-white py-[96px] w-[90%] m-auto desktop1:w-full ">
+    <section
+      className=" text-white py-[96px] w-[90%] m-auto desktop1:w-full"
+      id="serviços"
+    >
       <div className=" grid grid-cols-1 md:grid-cols-2 gap-10">
         {services.map((service) => (
           <ServiceCard key={service.number} {...service} />

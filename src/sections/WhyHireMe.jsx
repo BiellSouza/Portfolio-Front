@@ -11,7 +11,10 @@ export default function WhyHireMe() {
   ];
 
   return (
-    <div className="flex flex-col md:flex-row gap-16 desktop1:gap-8 text-white min-h-[600px] justify-between py-[96px]">
+    <div
+      className="flex flex-col md:flex-row gap-16 desktop1:gap-8 text-white min-h-[600px] justify-between py-[96px]"
+      id="resumo"
+    >
       {/* Left Section */}
       <div className=" flex flex-col gap-6">
         <div>
