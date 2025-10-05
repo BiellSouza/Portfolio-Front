@@ -2,7 +2,6 @@ import React from "react";
 import imgProfile from "../assets/Imagens/GabrielBlack.png";
 import ButtonsSocial from "../components/ButtonsSocial";
 import AnimatedCounter from "../components/AnimatedCounter";
-import curriculo from "../assets/Imagens/curriculo.pdf";
 
 function Hero() {
   return (
@@ -26,7 +25,7 @@ function Hero() {
 
             <div className="flex flex-wrap items-center justify-center w-full gap-6 pt-6 desktop1:justify-start ">
               <a
-                href={curriculo}
+                href="../assets/Imagens/curriculo.pdf"
                 download="Curriculo_Gabriel_Souza.pdf"
                 aria-label="Currículo de Gabriel"
                 className="flex gap-2 items-center bg-primary hover:bg-secondary  hover:scale-110 transition-all duration-300 px-6 py-2 rounded-full border border-secondary text-secondary hover:text-primary hover:border-primary cursor-pointer"
