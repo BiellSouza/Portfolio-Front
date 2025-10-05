@@ -3,7 +3,7 @@ import { ArrowDownRight } from "lucide-react";
 
 export default function ServiceCard({ number, title, description, active }) {
   return (
-    <div className="relative flex flex-col justify-between bg-transparent border-b border-neutral-700 py-8 transition-all">
+    <div className="relative flex flex-col justify-between bg-transparent border-b border-neutral-700 py-8 transition-all text-center items-center desktop1:text-start desktop1:items-start">
       {/* Número e ícone */}
       <div className="flex justify-between items-center">
         <h3 className="font-mono text-[42px] font-semibold text-secondary">

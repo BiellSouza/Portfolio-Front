@@ -5,24 +5,25 @@ import AnimatedCounter from "../components/AnimatedCounter";
 
 function Hero() {
   return (
-    <div className="flex flex-col py-[96px]">
-      <div className="flex w-full justify-between p-4 items-center">
+    <div className="flex flex-col py-[96px] w-[90%] m-auto">
+      <div className="flex flex-col-reverse gap-6 desktop1:flex-row w-full justify-between p-4 items-center">
         <div className="">
           <div className="text-white flex flex-col">
-            <h3 className="text-[22px]">Desenvolvedor FrontEnd</h3>
-            <h1 className="text-[72px] font-bold text-white leading-[70px]">
+            <h3 className="desktop2:text-[22px] text-center desktop1:text-start mb-2">
+              Desenvolvedor FrontEnd
+            </h3>
+            <h1 className="text-[32px] leading-9 text-center desktop1:text-start font-bold text-white desktop2:text-[72px] desktop2:leading-[70px]">
               Gabriel de
               <br /> <span className="text-secondary">Souza da Silva</span>
             </h1>
-            <div className="pt-4 w-[95%]">
-              <p>Sou especialista em criar experiências digitais elegantes e</p>
+            <div className="pt-4 w-[95%] m-auto text-center desktop1:text-start desktop1:m-0">
               <p>
-                sou proficiente em diversas linguagens de programação e
-                tecnologias.
+                Sou especialista em criar experiências digitais elegantes e sou
+                proficiente em diversas linguagens de programação e tecnologias.
               </p>
             </div>
 
-            <div className="flex w-full gap-6 pt-6">
+            <div className="flex flex-wrap items-center justify-center w-full gap-6 pt-6 desktop1:flex-nowrap desktop1:justify-start ">
               <button className="flex gap-2 items-center bg-primary hover:bg-secondary  hover:scale-110 transition-all duration-300 px-6 py-2 rounded-full border border-secondary text-secondary hover:text-primary hover:border-primary cursor-pointer">
                 Baixar Currículo{" "}
                 <span>
@@ -106,7 +107,8 @@ function Hero() {
             </div>
           </div>
         </div>
-        <div className="relative w-[500px] h-[500px] flex items-center justify-center">
+
+        <div className="relative w-[250px] h-[250px] desktop1:w-[800px] desktop1:h-[300px] desktop2:w-[700px] desktop2:h-[350px] flex items-center justify-center">
           <svg
             className="absolute inset-0 animate-spin-slow"
             viewBox="0 0 420 420"
@@ -127,12 +129,12 @@ function Hero() {
           <img
             src={imgProfile}
             alt="Imagem do Desenvolvedor"
-            className="w-[500px] h-[500px] object-cover rounded-full"
+            className="w-[250px] h-[250px] desktop1:w-[800px] desktop1:h-[300px] desktop2:w-[700px] desktop2:h-[350px] object-cover rounded-full"
           />
         </div>
       </div>
 
-      <div className="w-full flex gap-12 justify-between pt-[4%]">
+      <div className="w-full flex flex-wrap  gap-12 justify-between pt-[4%]">
         <AnimatedCounter end={2} label="Anos de Experiência" />
         <AnimatedCounter end={26} label="Projetos Completos" />
         <AnimatedCounter end={8} label="Tecnologias Utilizadas" />

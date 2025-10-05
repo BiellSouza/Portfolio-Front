@@ -18,8 +18,7 @@ export default function ProjectsSection() {
     {
       number: "02",
       title: "Buscador de Cep",
-      description:
-        "Projeto simples utilizando api 'ViaCep' para fornecer informações so cep, basta apenas digitar o Cep e clicar em enviar, e todas as outras informações aparecerão.",
+      description: "Buscador de CEP simples utilizando api 'ViaCep'.",
       technologies: ["Html", "Css", "javaScript"],
       image: project2,
       projectLink: "https://busca-cep-d007c8.netlify.app/",
@@ -39,10 +38,12 @@ export default function ProjectsSection() {
 
   return (
     <section className="py-[96px] relative">
-      <h2 className="text-3xl font-bold text-white mb-8">Projetos</h2>
+      <h2 className="text-3xl font-bold text-white mb-8 text-center desktop1:text-start">
+        Projetos
+      </h2>
 
       <div className="flex justify-center">
-        <div className="w-full">
+        <div className="max-w-[576px] desktop1:max-w-full bg-white/10 p-4 rounded-md ">
           <ProjectCard {...projects[current]} />
 
           {/* Setas abaixo do card */}

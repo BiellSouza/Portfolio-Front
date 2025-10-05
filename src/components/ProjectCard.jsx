@@ -9,15 +9,21 @@ export default function ProjectCard({
   number,
 }) {
   return (
-    <div className="flex flex-col lg:flex-row-reverse items-center bg-black/30 p-6 rounded-xl gap-6">
+    <div className="flex flex-col lg:flex-row-reverse items-center rounded-xl gap-6 ">
       {/* Imagem */}
-      <div className="flex-1">
-        <img src={image} alt={title} className="rounded-lg shadow-lg w-full" />
+      <div className="">
+        <img
+          src={image}
+          alt={title}
+          className="rounded-lg shadow-lg max-w-[544px] w-[100%] desktop1:max-w-full"
+        />
       </div>
 
       {/* Conteúdo */}
-      <div className="flex-1 flex flex-col gap-4">
-        <h1 className="text-[100px] text-white">{number}</h1>
+      <div className="flex flex-col gap-4 w-full">
+        <h1 className="text-[38px] desktop1:text-[100px] text-white">
+          {number}
+        </h1>
         <h3 className="text-2xl font-bold text-white">{title}</h3>
         <p className="text-gray-400">{description}</p>
 

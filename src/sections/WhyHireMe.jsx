@@ -11,7 +11,7 @@ export default function WhyHireMe() {
   ];
 
   return (
-    <div className="flex flex-col md:flex-row gap-8 text-white min-h-[600px] justify-between py-[96px]">
+    <div className="flex flex-col md:flex-row gap-16 desktop1:gap-8 text-white min-h-[600px] justify-between py-[96px]">
       {/* Left Section */}
       <div className=" flex flex-col gap-6">
         <div>
@@ -39,7 +39,7 @@ export default function WhyHireMe() {
       </div>
 
       {/* Right Section */}
-      <div className="w-[50%] justify-center">
+      <div className="desktop1:w-[50%] justify-center">
         {activeTab === "experience" && <ExperienceContent />}
         {activeTab === "education" && <EducationContent />}
         {activeTab === "skills" && <SkillsContent />}
@@ -54,7 +54,7 @@ export default function WhyHireMe() {
 ============================== */
 function ExperienceContent() {
   return (
-    <div>
+    <div className="w-full">
       <h3 className="text-2xl font-semibold mb-3">
         <span className="py-1 text-[42px] rounded">Minha Experiência</span>
       </h3>
@@ -78,7 +78,7 @@ function ExperienceContent() {
         ].map((item, i) => (
           <div
             key={i}
-            className="bg-[#1a1a1a] border border-secondary min-h-[200px] flex flex-col justify-between py-8 px-8 rounded-md hover:scale-105 transition-all duration-300 cursor-pointer"
+            className="bg-[#1a1a1a] border border-secondary min-h-[200px] flex flex-col justify-between p-5 desktop1:py-8 desktop1:px-8 rounded-md hover:scale-105 transition-all duration-300 cursor-pointer"
           >
             <div className="flex flex-col">
               <p className="text-green-400 text-[18px] mt-1">{item.date}</p>
@@ -128,7 +128,7 @@ function EducationContent() {
         ].map((item, i) => (
           <div
             key={i}
-            className="bg-[#1a1a1a] border border-secondary min-h-[200px] flex flex-col justify-between py-8 px-8 rounded-md hover:scale-105 transition-all duration-300 cursor-pointer"
+            className="bg-[#1a1a1a] border border-secondary min-h-[200px] flex flex-col justify-between p-5 desktop1:py-8 desktop1:px-8 rounded-md hover:scale-105 transition-all duration-300 cursor-pointer"
           >
             <div className="flex flex-col">
               <p className="text-green-400 text-[18px] mt-1">{item.date}</p>
@@ -194,7 +194,7 @@ function SkillsContent() {
 ============================== */
 function AboutContent() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col text-ce">
       <h3 className="text-2xl font-semibold mb-3">
         <span className="py-1 text-[42px] rounded">Sobre mim</span>
       </h3>
