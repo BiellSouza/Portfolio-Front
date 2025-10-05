@@ -23,3 +23,7 @@ function Index() {
 }
 
 export default Index;
+
+// Linkar curriculo;
+// Linkar redes sociais
+// Criar projetos e preparar imagem no figma - Linkar o projeto e repositorio

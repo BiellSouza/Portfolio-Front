@@ -1,6 +1,6 @@
 import React from "react";
 import imgProfile from "../assets/Imagens/GabrielBlack.png";
-import ButtonsSocial from "../components/buttonsSocial";
+import ButtonsSocial from "../components/ButtonsSocial";
 import AnimatedCounter from "../components/AnimatedCounter";
 
 function Hero() {
