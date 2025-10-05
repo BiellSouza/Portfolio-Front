@@ -106,14 +106,14 @@ export default function Navbar() {
           </ul>
 
           {/* Botão "Sobre mim" */}
-          <button
+          {/* <button
             onClick={() => setOpen(false)}
             className="bg-secondary py-2 px-4 rounded-full text-black hover:scale-110 transition-transform duration-300 hover:bg-primary hover:text-secondary hover:border hover:border-secondary mt-8"
           >
             <ScrollLink to="sobre" smooth={true} duration={600} offset={-70}>
               Sobre mim
             </ScrollLink>
-          </button>
+          </button> */}
         </div>
       </div>
     </>
