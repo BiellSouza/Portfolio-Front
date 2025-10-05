@@ -2,7 +2,7 @@ import React from "react";
 import imgProfile from "../assets/Imagens/GabrielBlack.png";
 import ButtonsSocial from "../components/ButtonsSocial";
 import AnimatedCounter from "../components/AnimatedCounter";
-import curriculo from "../../public/curriculo.pdf";
+import curriculo from "../assets/Imagens/curriculo.pdf";
 
 function Hero() {
   return (
