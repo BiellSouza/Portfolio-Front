@@ -12,8 +12,8 @@ export default function ProjectsSection() {
       description: "Meu site pessoal feito com React e TailwindCSS.",
       technologies: ["React", "TailwindCSS", "Vite"],
       image: project1,
-      projectLink: "https://meusite.com",
-      githubLink: "https://github.com/usuario/portfolio",
+      projectLink: "https://portfolio-front-tan.vercel.app/",
+      githubLink: "https://github.com/BiellSouza/Portfolio-Front",
     },
     {
       number: "02",
