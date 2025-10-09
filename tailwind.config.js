@@ -6,6 +6,8 @@ module.exports = {
         primary: "#000",
         secondary: "#22FA9D",
         terciary: "#ffffff",
+        dahsboard: "#DBDADE",
+        sidebarDash: "#363740",
       },
       screens: {
         phone1: "325px",
@@ -19,6 +21,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["JetBrains Mono", "sans-serif"],
+        Roboto: ["Roboto", "sans-serif"],
       },
       animation: {
         "spin-slow": "spin 20s linear infinite",
