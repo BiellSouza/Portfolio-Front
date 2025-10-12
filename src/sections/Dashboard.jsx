@@ -2,6 +2,7 @@ import { Menu, Search, Bell } from "lucide-react";
 import Promotions from "../components/Dashboard/Promotions";
 import Graficos from "../components/Dashboard/Graficos";
 import Catalogo from "../components/Dashboard/Catalogo";
+import Email from "../components/Dashboard/Email";
 
 function Dashboard() {
   return (
@@ -35,6 +36,7 @@ function Dashboard() {
         <Promotions />
         <Graficos />
         <Catalogo />
+        <Email />
       </div>
     </div>
   );
