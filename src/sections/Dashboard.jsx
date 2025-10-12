@@ -1,9 +1,12 @@
 import { Menu, Search, Bell } from "lucide-react";
 import Promotions from "../components/Dashboard/Promotions";
+import Graficos from "../components/Dashboard/Graficos";
+import Catalogo from "../components/Dashboard/Catalogo";
+import Email from "../components/Dashboard/Email";
 
 function Dashboard() {
   return (
-    <div className="bg-dahsboard h-screen">
+    <div className="bg-dahsboard h-[100vh">
       {/* Sidebar do Dashboard */}
       <div className="bg-sidebarDash h-[62px] flex justify-center items-center">
         <div className="flex w-[90%] justify-between items-center ">
@@ -31,6 +34,9 @@ function Dashboard() {
       <div className="pt-[23px]">
         {/* Card Promotions do Dashboard */}
         <Promotions />
+        <Graficos />
+        <Catalogo />
+        <Email />
       </div>
     </div>
   );
