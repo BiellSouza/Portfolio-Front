@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import Index from "./Index";
 import Dashboard from "./sections/Dashboard";
-import DashboardFinanceiro from "./pages/DashboardFinanceiro/DashboardFinanceiro";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -26,9 +25,6 @@ createRoot(document.getElementById("root")).render(
         />
         {/* Dashboard teste */}
         <Route path="/dashboard" element={<Dashboard />} />
-
-        {/* Dashboard financeiro */}
-        <Route path="/dashboardfinanceiro" element={<DashboardFinanceiro />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
