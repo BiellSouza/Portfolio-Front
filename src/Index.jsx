@@ -4,6 +4,7 @@ import Service from "./sections/Services";
 import ProjectsSection from "./sections/ProjectsSection";
 import FormContact from "./sections/FormContact";
 import WhyHireMe from "./sections/WhyHireMe";
+import SectionTest from "./sections/SectionTest";
 
 function Index() {
   return (
@@ -14,10 +15,9 @@ function Index() {
       <Service />
       <hr className="border border-secondary border-opacity-50" />
       <ProjectsSection />
-      {/* <hr className="border border-secondary border-opacity-50" />
-      <FormContact /> */}
       <hr className="border border-secondary border-opacity-50" />
       <WhyHireMe />
+      {/* <SectionTest /> */}
     </div>
   );
 }

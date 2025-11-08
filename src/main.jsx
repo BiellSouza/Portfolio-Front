@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import Index from "./Index";
 import Dashboard from "./sections/Dashboard";
+import LandingPageGamePc from "./pages/gamesPage/LandingPageGamePc";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -25,6 +26,7 @@ createRoot(document.getElementById("root")).render(
         />
         {/* Dashboard teste */}
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/game" element={<LandingPageGamePc />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
