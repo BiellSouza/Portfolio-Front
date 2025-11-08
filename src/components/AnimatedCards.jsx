@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import kirby from "../assets/img games/kirby.png";
 import { ArrowBigLeft, ArrowBigRight } from "lucide-react";
 
 // const initialCards = [
