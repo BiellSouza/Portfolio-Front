@@ -13,7 +13,7 @@ createRoot(document.getElementById("root")).render(
     <HashRouter>
       <Routes>
         {/* Página principal do seu portfólio */}
-        <Route
+        {/* <Route
           path="/"
           element={
             <>
@@ -25,10 +25,10 @@ createRoot(document.getElementById("root")).render(
               </footer>
             </>
           }
-        />
+        /> */}
         {/* Dashboard teste */}
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/game" element={<LandingPageGamePc />} />
+        {/* <Route path="/dashboard" element={<Dashboard />} /> */}
+        <Route path="/" element={<LandingPageGamePc />} />
       </Routes>
     </HashRouter>
   </StrictMode>
