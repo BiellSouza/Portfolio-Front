@@ -125,7 +125,7 @@ export default function AnimatedCards() {
               className={`bg-gradient-to-t ${card.color} w-[200px] p-5 rounded-[30px] h-[350px] shadow-xl absolute border-2`}
               style={{
                 transform: `rotate(${rotation[index]}deg) translateX(${
-                  (index - 2) * (window.innerWidth < 380 ? 14 : 140)
+                  (index - 2) * (window.innerWidth < 768 ? 14 : 140)
                 }px)`,
 
                 zIndex,

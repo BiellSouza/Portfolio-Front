@@ -76,7 +76,7 @@ import AnimatedCards from "../../components/AnimatedCards";
 
 function LandingPageGamePc() {
   return (
-    <div className="max-w-[1215px] text-white flex flex-col justify-between border m-auto desktop1:mt-32 px-2 relative h-[950px] phone2:max-h-[850px] tablet1:max-h-[770px] desktop1:max-h-[700px] overflow-y-hidden">
+    <div className="max-w-[1215px] text-white flex flex-col justify-between border m-auto desktop1:mt-32 px-2 relative h-[950px] phone2:max-h-[930px] tablet1:max-h-[770px] desktop1:max-h-[700px] overflow-y-hidden">
       <div className="flex flex-col desktop1:justify-between desktop1:flex-row items-center">
         {" "}
         <div className="max-w-[405px] w-full flex justify-between items-center font-sans">
