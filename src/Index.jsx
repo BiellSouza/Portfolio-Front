@@ -9,15 +9,15 @@ import SectionTest from "./sections/SectionTest";
 function Index() {
   return (
     <div className="max-w-[1215px] w-[90%] m-auto pt-4">
-      {/* <Navbar />
+      <Navbar />
       <Hero />
       <hr className="border border-secondary border-opacity-50" />
       <Service />
       <hr className="border border-secondary border-opacity-50" />
       <ProjectsSection />
       <hr className="border border-secondary border-opacity-50" />
-      <WhyHireMe /> */}
-      <SectionTest />
+      <WhyHireMe />
+      {/* <SectionTest /> */}
     </div>
   );
 }

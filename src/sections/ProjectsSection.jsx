@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import ProjectCard from "../components/ProjectCard";
 import project1 from "../assets/Imagens/project1.png";
 import project2 from "../assets/Imagens/project2.png";
+import project3 from "../assets/Imagens/project3.png";
 
 export default function ProjectsSection() {
   const projects = [
@@ -22,6 +23,16 @@ export default function ProjectsSection() {
       technologies: ["Html", "Css", "javaScript"],
       image: project2,
       projectLink: "https://busca-cep-d007c8.netlify.app/",
+      githubLink: "https://github.com/BiellSouza/Spck-Buscacep-",
+    },
+    {
+      number: "03",
+      title: "Cards Animados",
+      description:
+        "Um Projeto simples de cards animados utilizando a api 'PokéAPI' para gerar os pokémons nos cards. ",
+      technologies: ["Html", "Css", "javaScript"],
+      image: project3,
+      projectLink: "/game",
       githubLink: "https://github.com/BiellSouza/Spck-Buscacep-",
     },
   ];
