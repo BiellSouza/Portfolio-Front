@@ -1,19 +1,20 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { HashRouter } from "react-router-dom";
+// import { HashRouter } from "react-router-dom";
+
 
 import "./index.css";
 import Index from "./Index";
-import Dashboard from "./sections/Dashboard";
-import LandingPageGamePc from "./pages/gamesPage/LandingPageGamePc";
+import Estudos from "./pages/estudos/Estudos";
+import GerenciadorTarefas from "./pages/gerenciador/GerenciadorTarefas";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
         {/* Página principal do seu portfólio */}
-        {/* <Route
+        <Route
           path="/"
           element={
             <>
@@ -25,11 +26,10 @@ createRoot(document.getElementById("root")).render(
               </footer>
             </>
           }
-        /> */}
-        {/* Dashboard teste */}
-        {/* <Route path="/dashboard" element={<Dashboard />} /> */}
-        <Route path="/" element={<LandingPageGamePc />} />
+        />
+        <Route path="/estudos" element={<Estudos />} />
+        <Route path="/tarefas" element={<GerenciadorTarefas />} />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   </StrictMode>
 );
