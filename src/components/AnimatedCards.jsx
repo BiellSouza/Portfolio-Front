@@ -2,44 +2,6 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowBigLeft, ArrowBigRight } from "lucide-react";
 
-// const initialCards = [
-//   {
-//     title: "Kirby",
-//     subtitle: "Star Allies",
-//     rating: "4.7",
-//     color: "from-blue-700 to-cyan-400",
-//     img: kirby,
-//   },
-//   {
-//     title: "kkk",
-//     subtitle: "Star Allies",
-//     rating: "4.7",
-//     color: "from-blue-700 to-cyan-400",
-//     img: kirby,
-//   },
-//   {
-//     title: "Kirby",
-//     subtitle: "Star Allies",
-//     rating: "4.7",
-//     color: "from-blue-700 to-cyan-400",
-//     img: kirby,
-//   },
-//   {
-//     title: "Kirby",
-//     subtitle: "Star Allies",
-//     rating: "4.7",
-//     color: "from-blue-700 to-cyan-400",
-//     img: kirby,
-//   },
-//   {
-//     title: "Kirby",
-//     subtitle: "Star Allies",
-//     rating: "4.7",
-//     color: "from-blue-700 to-cyan-400",
-//     img: kirby,
-//   },
-// ];
-
 export default function AnimatedCards() {
   const [cards, setCards] = useState([]);
   const [animating, setAnimating] = useState(false);
@@ -47,7 +9,9 @@ export default function AnimatedCards() {
   // Busca os primeiros 5 Pokémon
   useEffect(() => {
     const fetchPokemons = async () => {
-      const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=5");
+      const response = await fetch(
+        "https://pokeapi.co/api/v2/pokemon?limit=200"
+      );
       const data = await response.json();
 
       // Busca detalhes (imagens e stats)
@@ -58,7 +22,7 @@ export default function AnimatedCards() {
           return {
             name: pokeData.name,
             image: pokeData.sprites.other["official-artwork"].front_default,
-            rating: (Math.random() * 5).toFixed(1), // só pra simular “nota”
+            rating: (Math.random() * 7).toFixed(1), // só pra simular “nota”
             color: "from-yellow-400 to-red-500", // pode variar por tipo depois
           };
         })
