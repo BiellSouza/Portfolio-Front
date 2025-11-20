@@ -23,6 +23,7 @@ module.exports = {
         sans: ["JetBrains Mono", "sans-serif"],
         Roboto: ["Roboto", "sans-serif"],
         Poppins: ["Poppins", "sans-serif"],
+        Avenir: ["Avenir", "sans-serif"],
       },
       animation: {
         "spin-slow": "spin 20s linear infinite",

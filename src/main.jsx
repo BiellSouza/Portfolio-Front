@@ -3,11 +3,11 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import { HashRouter } from "react-router-dom";
 
-
 import "./index.css";
 import Index from "./Index";
 import Estudos from "./pages/estudos/Estudos";
 import GerenciadorTarefas from "./pages/gerenciador/GerenciadorTarefas";
+import SpotifyClone from "./pages/projetos/SpotifyClone";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -28,6 +28,7 @@ createRoot(document.getElementById("root")).render(
           }
         />
         <Route path="/estudos" element={<Estudos />} />
+        <Route path="/project1" element={<SpotifyClone />} />
         <Route path="/tarefas" element={<GerenciadorTarefas />} />
       </Routes>
     </BrowserRouter>
