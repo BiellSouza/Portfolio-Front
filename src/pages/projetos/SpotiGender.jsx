@@ -1,13 +1,33 @@
 import React from "react";
 import { ChevronLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { ThemeContext } from "../../contexts/ColorContext";
+import { useContext } from "react";
 
 function SpotiGender() {
+  const [gender, setGender] = useState("");
+  const [message, setMessage] = useState();
   const navigate = useNavigate();
+  const theme = useContext(ThemeContext);
+
+  const MIN_CARACTERES = 3;
+
+  const verifyGender = () => {
+    if (gender.length === MIN_CARACTERES || gender.length > MIN_CARACTERES) {
+      navigate("/name");
+    } else {
+      alert("Gênero não encontrado");
+      setMessage(true);
+    }
+  };
+
   return (
-    <div className="min-h-[600px] bg-[#121212] relative font-Avenir flex flex-col max-w-[428px] mx-auto translate-y-1/4 border-2  rounded-md">
-      <div className="flex flex-row items-center mt-8 gap-14">
-        <div className="text-white w-fit bg-black p-1 ml-4 rounded-full">
+    <div
+      className={`min-h-[600px] relative font-Avenir flex flex-col max-w-[428px] mx-auto translate-y-1/4 border-2 rounded-md ${theme.background}`}
+    >
+      <div className="flex flex-row items-center mt-8 gap-[100px] w-full">
+        <div className="text-white cursor-pointer w-fit bg-black p-1 ml-4 rounded-full">
           <span>
             <a onClick={() => navigate("/password")}>
               <ChevronLeft />
@@ -25,16 +45,20 @@ function SpotiGender() {
         </h1>
         <input
           type="text"
+          value={gender}
+          onChange={(e) => setGender(e.target.value)}
           className="w-[95%] h-[51px] rounded-[5px] max-w-[365px] outline-none px-2 text-white bg-[#777777]"
         />
-        <p className="text-white text-[10px] mt-2">
-          You’ll need to confirm this email later.
-        </p>
+        {message && (
+          <p className="text-white text-[14px] mt-2">
+            Este gênero musical não existe ou não foi encontrado{" "}
+          </p>
+        )}
       </div>
       <div className="flex justify-center mt-10">
         <button
-          onClick={() => navigate("/name")}
-          className="bg-[#535353] font-extrabold p-3 w-[82px] rounded-[45px]"
+          onClick={verifyGender}
+          className="bg-[#535353] border font-extrabold p-3 w-[82px] rounded-[45px] cursor-pointer hover:transition-all ease-out hover:bg-[#1ED760] hover:scale-110 hover:duration-300"
         >
           Next
         </button>

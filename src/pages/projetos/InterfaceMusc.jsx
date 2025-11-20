@@ -10,21 +10,36 @@ import {
   Pause,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { ThemeContext } from "../../contexts/ColorContext";
+import { useContext } from "react";
 
 function InterfaceMusic() {
   const navigate = useNavigate();
+  const theme = useContext(ThemeContext);
+
+  const songs = [
+    { music: "Castle of Glass", banda: "Linkin Park" },
+    { music: "The Emptiness Machine", banda: "Linkin Park" },
+    { music: "stiff upper lip ", banda: "Acdc" },
+    { music: "Up from the Bottom", banda: "Linkin Park" },
+    { music: "Safe In New Your City", banda: "Acdc" },
+  ];
+
   return (
-    <div className="min-h-[600px] bg-gradient-to-t to-red-600 from-[#121212] relative font-Avenir flex flex-col max-w-[428px] mx-auto translate-y-20 border-2 rounded-md">
+    <div
+      className={`min-h-[600px] relative font-Avenir flex flex-col max-w-[428px] mx-auto translate-y-20 border-2 rounded-md ${theme.background}`}
+    >
       <div className="flex flex-col mt-4 gap-14">
-        <div className="text-white/50 w-fit bg-transparent p-1 ml-1 rounded-full">
+        <div className="text-white/50 cursor-pointer w-fit bg-transparent p-1 ml-1 rounded-full">
           <span>
-            <a onClick={() => navigate("/search")}>
+            <a onClick={() => navigate("/name")}>
               <ChevronLeft />
             </a>
           </span>
         </div>
+
         <div className="px-4 mt-44">
-          <div className="text-white">
+          <div className="text-white ">
             {" "}
             <h1 className="text-[25px]">Nome Musica</h1>
             <p className="text-[14px]">Nome de quem colocou</p>
@@ -40,46 +55,33 @@ function InterfaceMusic() {
         </div>
         <div className="flex flex-col gap-2 px-4">
           <hr className="opacity-10" />
-          <div className="flex gap-1 text-[#1DB954]">
-            {" "}
-            <span>
-              <Disc3 width={16} className="animate-spin" />
-            </span>
-            <h1 className="text-[15px] ">From Me to You - Mono / Remastered</h1>
-          </div>
-          <hr className="opacity-10" />
-          <div className="flex gap-1">
-            {" "}
-            <span>
-              <Disc3 width={16} className="animate-spin" />
-            </span>
-            <h1 className="text-[15px]">Nome da musica que esta ouvindo</h1>
-          </div>
-          <hr className="opacity-10" />
-          <div className="flex gap-1">
-            {" "}
-            <span>
-              <Disc3 width={16} className="animate-spin" />
-            </span>
-            <h1 className="text-[15px]">Nome da musica que esta ouvindo</h1>
-          </div>
-          <hr className="opacity-10" />
-          <div className="flex gap-1">
-            {" "}
-            <span>
-              <Disc3 width={16} className="animate-spin" />
-            </span>
-            <h1 className="text-[15px]">Nome da musica que esta ouvindo</h1>
-          </div>
-          <hr className="opacity-10" />
-          <div className="flex gap-1">
-            {" "}
-            <span>
-              <Disc3 width={16} className="animate-spin" />
-            </span>
-            <h1 className="text-[15px]">Nome da musica que esta ouvindo</h1>
-          </div>
-          <hr className="opacity-10" />
+          {songs.map((song, index) => (
+            <div key={index} className="flex flex-col gap-1 text-white">
+              {" "}
+              <div className="flex gap-1">
+                {" "}
+                <span>
+                  <Disc3
+                    width={16}
+                    className={`${
+                      index === 0 ? "text-[#1DB954] animate-spin" : "text-white"
+                    } `}
+                  />
+                </span>
+                <div className="w-full">
+                  <h1
+                    className={`text-[15px] ${
+                      index === 0 ? "text-[#1DB954]" : "text-white"
+                    }`}
+                  >
+                    {song.music}
+                  </h1>
+                  <p className="text-white text-[12px]">{song.banda}</p>
+                </div>
+              </div>
+              <hr className="opacity-10" />
+            </div>
+          ))}
         </div>
         <div className="flex justify-evenly bg-black text-white py-2 gap-8">
           <button
