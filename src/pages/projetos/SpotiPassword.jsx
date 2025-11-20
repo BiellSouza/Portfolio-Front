@@ -1,12 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { ChevronLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 function SpotiPassword() {
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState();
   const navigate = useNavigate();
+
+  const MIN_CARACTERES = 8;
+  const MAX_CARACTERES = 10;
+
+  const verifyPassword = () => {
+    if (
+      password.length === MIN_CARACTERES ||
+      password.length > MAX_CARACTERES
+    ) {
+      navigate("/gender");
+      return;
+    }
+
+    if (password.length === 0 || password.length > 10) {
+      alert("A Senha precisa ter no mínimo 8 caracteres");
+      setMessage("true");
+    }
+  };
+
   return (
     <div className="min-h-[600px] bg-[#121212] relative font-Avenir flex flex-col max-w-[428px] mx-auto translate-y-1/4 border-2  rounded-md">
-      <div className="flex flex-row items-center mt-8 gap-14">
+      <div className="flex flex-row items-center mt-8 gap-[100px] w-full">
         <div className="text-white w-fit bg-black p-1 ml-4 rounded-full">
           <span>
             <a onClick={() => navigate("/login")}>
@@ -25,16 +46,19 @@ function SpotiPassword() {
         </h1>
         <input
           type="text"
+          value={password}
+          required
+          onChange={(e) => setPassword(e.target.value)}
           className="w-[95%] h-[51px] rounded-[5px] max-w-[365px] outline-none px-2 text-white bg-[#777777]"
         />
-        <p className="text-white text-[10px] mt-2">
-          You’ll need to confirm this email later.
-        </p>
+        {message && (
+          <p className="text-white text-[14px] mt-2">Esta Senha não é válida</p>
+        )}
       </div>
       <div className="flex justify-center mt-10">
         <button
-          onClick={() => navigate("/gender")}
-          className="bg-[#535353] font-extrabold p-3 w-[82px] rounded-[45px]"
+          onClick={verifyPassword}
+          className="bg-[#535353] font-extrabold p-3 w-[82px] rounded-[45px] cursor-pointer hover:transition-all ease-out hover:bg-[#1ED760] hover:scale-110 hover:duration-300"
         >
           Next
         </button>

@@ -6,7 +6,7 @@ function SpotiSearch() {
   const navigate = useNavigate();
   return (
     <div className="min-h-[600px] bg-[#121212] relative font-Avenir flex flex-col max-w-[428px] mx-auto translate-y-1/4 border-2  rounded-md">
-      <div className="flex flex-row items-center mt-8 gap-14">
+      <div className="flex flex-row items-center mt-8 gap-[100px] w-full">
         <div className="text-white w-fit bg-black p-1 ml-4 rounded-full">
           <span>
             <a onClick={() => navigate("/name")}>
@@ -34,7 +34,7 @@ function SpotiSearch() {
       <div className="flex justify-center mt-10">
         <button
           onClick={() => navigate("/interfaceMusic")}
-          className="bg-[#535353] font-extrabold p-3 w-[82px] rounded-[45px]"
+          className="bg-[#535353] font-extrabold p-3 w-[82px] rounded-[45px] cursor-pointer hover:transition-all ease-out hover:bg-[#1ED760] hover:scale-110 hover:duration-300"
         >
           Buscar
         </button>
