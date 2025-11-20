@@ -1,9 +1,13 @@
 import React from "react";
 import { ChevronLeft, Search } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { ThemeContext } from "../../contexts/ColorContext";
+import { useContext } from "react";
 
 function SpotiSearch() {
   const navigate = useNavigate();
+  const theme = useContext(ThemeContext);
+
   return (
     <div className="min-h-[600px] bg-[#121212] relative font-Avenir flex flex-col max-w-[428px] mx-auto translate-y-1/4 border-2  rounded-md">
       <div className="flex flex-row items-center mt-8 gap-[100px] w-full">

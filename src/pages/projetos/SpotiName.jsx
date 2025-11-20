@@ -2,27 +2,36 @@ import React from "react";
 import { ChevronLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { ThemeContext } from "../../contexts/ColorContext";
+import { useContext } from "react";
 
 function SpotiName() {
   const [name, setName] = useState("");
   const [message, setMessage] = useState();
   const navigate = useNavigate();
+  const theme = useContext(ThemeContext);
 
-  const MIN_Letters = 2;
+  const MIN_Letters = 3;
 
   const verifyName = () => {
     if (name.length > MIN_Letters) {
       navigate("/interfaceMusic");
-    } else {
+    }
+    if (name.length === 0) {
+      alert("O Campo esta vazio!");
+    } 
+    else if (name.length < MIN_Letters && name.length > 0) {
       alert("Não Use Apelidos!");
       setMessage("true");
     }
   };
 
   return (
-    <div className="min-h-[600px] bg-[#121212] relative font-Avenir flex flex-col max-w-[428px] mx-auto translate-y-1/4 border-2  rounded-md">
+    <div
+      className={`min-h-[600px] relative font-Avenir flex flex-col max-w-[428px] mx-auto translate-y-1/4 border-2 rounded-md ${theme.background}`}
+    >
       <div className="flex flex-row items-center mt-8 gap-[100px] w-full">
-        <div className="text-white w-fit bg-black p-1 ml-4 rounded-full">
+        <div className="text-white cursor-pointer w-fit bg-black p-1 ml-4 rounded-full">
           <span>
             <a onClick={() => navigate("/gender")}>
               <ChevronLeft />

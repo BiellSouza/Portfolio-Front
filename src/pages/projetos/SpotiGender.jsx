@@ -2,11 +2,14 @@ import React from "react";
 import { ChevronLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { ThemeContext } from "../../contexts/ColorContext";
+import { useContext } from "react";
 
 function SpotiGender() {
   const [gender, setGender] = useState("");
   const [message, setMessage] = useState();
   const navigate = useNavigate();
+  const theme = useContext(ThemeContext);
 
   const MIN_CARACTERES = 3;
 
@@ -20,9 +23,11 @@ function SpotiGender() {
   };
 
   return (
-    <div className="min-h-[600px] bg-[#121212] relative font-Avenir flex flex-col max-w-[428px] mx-auto translate-y-1/4 border-2  rounded-md">
+    <div
+      className={`min-h-[600px] relative font-Avenir flex flex-col max-w-[428px] mx-auto translate-y-1/4 border-2 rounded-md ${theme.background}`}
+    >
       <div className="flex flex-row items-center mt-8 gap-[100px] w-full">
-        <div className="text-white w-fit bg-black p-1 ml-4 rounded-full">
+        <div className="text-white cursor-pointer w-fit bg-black p-1 ml-4 rounded-full">
           <span>
             <a onClick={() => navigate("/password")}>
               <ChevronLeft />
@@ -53,7 +58,7 @@ function SpotiGender() {
       <div className="flex justify-center mt-10">
         <button
           onClick={verifyGender}
-          className="bg-[#535353] font-extrabold p-3 w-[82px] rounded-[45px] cursor-pointer hover:transition-all ease-out hover:bg-[#1ED760] hover:scale-110 hover:duration-300"
+          className="bg-[#535353] border font-extrabold p-3 w-[82px] rounded-[45px] cursor-pointer hover:transition-all ease-out hover:bg-[#1ED760] hover:scale-110 hover:duration-300"
         >
           Next
         </button>

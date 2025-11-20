@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import Logo from "../../assets/project1/Logo.png";
 import img1 from "../../assets/project1/GoogleImg.png";
 import img2 from "../../assets/project1/FacebookImg.png";
 import img3 from "../../assets/project1/AppleImg.png";
 import { useNavigate } from "react-router-dom";
+import { ThemeContext } from "../../contexts/ColorContext";
 
 function SpotifyHome() {
   const navigate = useNavigate();
+  const theme = useContext(ThemeContext);
+
   return (
     <div
       id="home"
-      className={`min-h-[600px] relative font-Avenir flex flex-col max-w-[428px] mx-auto translate-y-1/4 border-2 rounded-md `}
+      className={`min-h-[600px] relative font-Avenir flex flex-col max-w-[428px] mx-auto translate-y-1/4 border-2 rounded-md ${theme.background}`}
     >
       <div className="absolute bottom-[54px] w-full">
         <div className="flex flex-col items-center gap-[10px] ">
@@ -65,6 +68,13 @@ function SpotifyHome() {
           </a>
         </div>
       </div>
+      <p className="text-white absolute translate-x-[100px] bottom-2 text-[12px] flex flex-col text-center">
+        Projeto Desenvolvido pelo: <br />{" "}
+        <span className="text-[#1ED760]">
+          Desenvolvedor JavaScript{" "}
+          <span className="underline">Gabriel Souza</span>
+        </span>
+      </p>
     </div>
   );
 }
