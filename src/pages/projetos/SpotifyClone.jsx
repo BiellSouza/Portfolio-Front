@@ -3,10 +3,15 @@ import Logo from "../../assets/project1/Logo.png";
 import img1 from "../../assets/project1/GoogleImg.png";
 import img2 from "../../assets/project1/FacebookImg.png";
 import img3 from "../../assets/project1/AppleImg.png";
+import { useNavigate } from "react-router-dom";
 
-function SpotifyClone() {
+function SpotifyHome() {
+  const navigate = useNavigate();
   return (
-    <div className="bg-[#121212] min-h-screen relative font-Avenir flex flex-col">
+    <div
+      id="home"
+      className="min-h-[600px] bg-[#121212] relative font-Avenir flex flex-col max-w-[428px] mx-auto translate-y-1/4 border-2  rounded-md"
+    >
       <div className="absolute bottom-[54px] w-full">
         <div className="flex flex-col items-center gap-[10px] ">
           <img src={Logo} alt="logo" className="w-12" />
@@ -15,32 +20,47 @@ function SpotifyClone() {
           </h1>
         </div>
         <div className="flex flex-col items-center gap-3 mt-[22px]">
-          <button className="text-black font-bold py-3 text-[16px] bg-[#1ED760] rounded-[45px] w-[90%] max-w-[337px]">
+          <button
+            onClick={() => navigate("/login#login")}
+            className="text-black font-bold py-3 text-[16px] bg-[#1ED760] rounded-[45px] w-[90%] max-w-[337px]"
+          >
             Sign up free
           </button>
 
-          <button className="text-white font-bold py-3 px-4 text-[16px] bg-[#121212] border border-white/70 rounded-[45px] w-[90%] max-w-[337px] flex gap-[10%] items-center ">
+          <button
+            onClick={() => navigate("/login#login")}
+            className="text-white font-bold py-3 px-4 text-[16px] bg-[#121212] border border-white/70 rounded-[45px] w-[90%] max-w-[337px] flex gap-[10%] items-center "
+          >
             <span>
               <img src={img1} alt="img marcas" className="w-4" />
             </span>
             Continue with Google
           </button>
 
-          <button className="text-white font-bold py-3 px-4 text-[16px] bg-[#121212] border border-white/70 rounded-[45px] w-[90%] max-w-[337px] flex gap-[10%] items-center ">
+          <button
+            onClick={() => navigate("/login#login")}
+            className="text-white font-bold py-3 px-4 text-[16px] bg-[#121212] border border-white/70 rounded-[45px] w-[90%] max-w-[337px] flex gap-[10%] items-center "
+          >
             <span>
               <img src={img2} alt="img marcas" className="w-4" />
             </span>
             Continue with Facebook
           </button>
 
-          <button className="text-white font-bold py-3 px-4 text-[16px] bg-[#121212] border border-white/70 rounded-[45px] w-[90%] max-w-[337px] flex gap-[10%] items-center ">
+          <button
+            onClick={() => navigate("/login#login")}
+            className="text-white font-bold py-3 px-4 text-[16px] bg-[#121212] border border-white/70 rounded-[45px] w-[90%] max-w-[337px] flex gap-[10%] items-center "
+          >
             <span>
               <img src={img3} alt="img marcas" className="w-4" />
             </span>
             Continue with Apple
           </button>
 
-          <a href="" className="text-white font-extrabold flex justify-center">
+          <a
+            onClick={() => navigate("/login#login")}
+            className="text-white font-extrabold flex justify-center"
+          >
             Log in
           </a>
         </div>
@@ -49,4 +69,4 @@ function SpotifyClone() {
   );
 }
 
-export default SpotifyClone;
+export default SpotifyHome;
