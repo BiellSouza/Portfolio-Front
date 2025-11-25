@@ -7,6 +7,7 @@ import "./index.css";
 import Index from "./Index";
 import Estudos from "./pages/estudos/Estudos";
 import InteractiveLampada from "./pages/projetos/lampada/InteractiveLampada";
+import ListaInterativa from "./pages/projetos/ListaInterativa/ListaInterativa";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -29,6 +30,7 @@ createRoot(document.getElementById("root")).render(
 
         <Route path="/estudos" element={<Estudos />} />
         <Route path="/projeto" element={<InteractiveLampada />} />
+        <Route path="/projeto1" element={<ListaInterativa />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
