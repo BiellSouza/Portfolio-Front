@@ -25,8 +25,7 @@ function InteractiveLampada() {
         <div className="flex flex-col desktop1:flex-row">
           <div className="text-black/50 text-center desktop1:text-start desktop1:max-w-[400px] desktop1:p-2">
             <h1 className="text-[22px] mt-8">
-              Bem Vindos ao meu{" "}
-              <span className="text-yellow-300">Projeto 00</span>
+              Bem Vindos ao meu <span className="text-red-700">Projeto 00</span>
             </h1>
             <p className="text-[14px] mt-4 w-[80%] desktop1:w-full m-auto">
               Este é um projeto bem simples e iniciante no mundo da programação,
