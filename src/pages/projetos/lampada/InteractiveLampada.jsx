@@ -9,14 +9,14 @@ function InteractiveLampada() {
 
   const Estado = () => {
     if (lampada === "acesa") {
-      return <img src={Acesa} alt="" />;
+      return <img src={Acesa} alt="lampada acesa" />;
     }
 
     if (lampada === "quebrada") {
-      return <img src={Quebrada} alt="" />;
+      return <img src={Quebrada} alt="lampada quebrada" />;
     }
 
-    return <img src={Apagada} alt="" />;
+    return <img src={Apagada} alt="lampada apagada" />;
   };
 
   return (
@@ -49,19 +49,19 @@ function InteractiveLampada() {
             <div className="flex flex-row gap-8 justify-between">
               <button
                 onClick={() => setLampada("acesa")}
-                className="cursor-pointer hover:text-yellow-300 outline-none hover:transition-all ease-out hover:scale-105 hover:duration-300"
+                className="cursor-pointer hover:text-red-700 outline-none hover:transition-all ease-out hover:scale-105 hover:duration-300"
               >
                 Acender
               </button>
               <button
                 onClick={setLampada}
-                className="cursor-pointer hover:text-yellow-300 outline-none hover:transition-all ease-out hover:scale-105 hover:duration-300"
+                className="cursor-pointer hover:text-red-700 outline-none hover:transition-all ease-out hover:scale-105 hover:duration-300"
               >
                 Apagar
               </button>
               <button
                 onClick={() => setLampada("quebrada")}
-                className="cursor-pointer hover:text-yellow-300 outline-none hover:transition-all ease-out hover:scale-105 hover:duration-300"
+                className="cursor-pointer hover:text-red-700 outline-none hover:transition-all ease-out hover:scale-105 hover:duration-300"
               >
                 Quebrar
               </button>

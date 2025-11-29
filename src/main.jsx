@@ -8,6 +8,7 @@ import Index from "./Index";
 import Estudos from "./pages/estudos/Estudos";
 import InteractiveLampada from "./pages/projetos/lampada/InteractiveLampada";
 import ListaInterativa from "./pages/projetos/ListaInterativa/ListaInterativa";
+import ExerciciosJS from "./pages/projetos/exerciciosJavaScript/ExerciciosJS";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -31,6 +32,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/estudos" element={<Estudos />} />
         <Route path="/projeto" element={<InteractiveLampada />} />
         <Route path="/projeto1" element={<ListaInterativa />} />
+        <Route path="/exercicios" element={<ExerciciosJS />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
