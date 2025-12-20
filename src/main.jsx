@@ -1,16 +1,18 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 // import { HashRouter } from "react-router-dom";
 
-import "./index.css";
-import Index from "./Index";
-import Estudos from "./pages/estudos/Estudos";
-import InteractiveLampada from "./pages/projetos/lampada/InteractiveLampada";
-import ListaInterativa from "./pages/projetos/ListaInterativa/ListaInterativa";
-import ExerciciosJS from "./pages/projetos/exerciciosJavaScript/ExerciciosJS";
+import './index.css'
+import Index from './Index'
+import Estudos from './pages/estudos/Estudos'
+import InteractiveLampada from './pages/projetos/lampada/InteractiveLampada'
+import ListaInterativa from './pages/projetos/ListaInterativa/ListaInterativa'
+import ExerciciosJS from './pages/projetos/exerciciosJavaScript/ExerciciosJS'
+import Financas from './pages/estudos/Financas'
+import Semaforo from './pages/projetos/Semaforo'
 
-createRoot(document.getElementById("root")).render(
+createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
@@ -21,7 +23,7 @@ createRoot(document.getElementById("root")).render(
             <>
               <Index />
               <footer className="w-full bg-secondary py-4">
-                <h1 className="text-center text-[20px] text-white">
+                <h1 className="text-center text-[20px] text-primary">
                   Obrigado pela presença!
                 </h1>
               </footer>
@@ -32,8 +34,10 @@ createRoot(document.getElementById("root")).render(
         <Route path="/estudos" element={<Estudos />} />
         <Route path="/projeto" element={<InteractiveLampada />} />
         <Route path="/projeto1" element={<ListaInterativa />} />
+        <Route path="/projeto2" element={<Semaforo />} />
         <Route path="/exercicios" element={<ExerciciosJS />} />
+        <Route path="/financeiro" element={<Financas />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
-);
+)

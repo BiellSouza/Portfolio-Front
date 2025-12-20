@@ -1,103 +1,206 @@
-import React from "react";
-import { useState } from "react";
-import { Dialog } from "primereact/dialog";
-import "primereact/resources/themes/lara-light-cyan/theme.css";
+import React, { useState } from 'react'
+import { Calculator } from 'lucide-react'
+
 function Estudos() {
-  const [count, setCount] = useState(0);
-  const [explicacaoAcrescentar, setExplicacaoAcrescentar] = useState(null);
-  const [explicacaoZerar, setexplicacaoZerar] = useState(null);
+  // Lógica da Calculadora
+  const [numberatual, setNumberAtual] = useState(0)
+  const [firstNum, setFirstNumb] = useState()
+  const [operator, setOperator] = useState('')
 
-  const soma = () => {
-    setCount((valor) => valor + 1);
-    console.log("Função soma funcionando, Dev!");
-  };
+  function inputNumber(e) {
+    var input = e.target.value
+    if (numberatual === 0) {
+      setNumberAtual(input)
+    } else {
+      setNumberAtual(numberatual + input)
+    }
+  }
 
-  const subtrair = () => {
-    setCount((valor) => valor - 1);
-    console.log("Função subtrair funcionando, Dev!");
-  };
+  function porcentage() {
+    setNumberAtual(numberatual / 100)
+  }
 
-  const apagar = () => {
-    setCount(0);
-    console.log("Função apagar funcionando, Dev!");
-  };
+  function resetInput() {
+    setNumberAtual(0)
+  }
 
-  const infoAcrescentar = () => {
-    setExplicacaoAcrescentar(true);
-    console.log("Modal info Acrescentar funcionando, Dev!");
-  };
+  function sign() {
+    setNumberAtual(-numberatual)
+  }
 
-  const fecharModal = () => {
-    setExplicacaoAcrescentar(null);
-    console.log("Função fechar modal funcionando, Dev!");
-  };
+  function operatorHandle(e) {
+    var operatorInput = e.target.value
+    setOperator(operatorInput)
+    setFirstNumb(numberatual)
+    setNumberAtual(0)
+  }
 
-  const infoZerar = () => {
-    setexplicacaoZerar(true);
-    alert("Função em Desenvolvimento!");
-    console.log("Função info Zerar funcionando, Dev!");
-  };
+  function calculate() {
+    // console.log('calculou!')
+    // console.log(operator)
+    // console.log(numberatual)
+    // console.log(firstNum)
+    if (operator === '/') {
+      setNumberAtual(parseFloat(firstNum) / parseFloat(numberatual))
+    } else if (operator === 'x') {
+      setNumberAtual(parseFloat(firstNum) * parseFloat(numberatual))
+    } else if (operator === '-') {
+      setNumberAtual(parseFloat(firstNum) - parseFloat(numberatual))
+    } else if (operator === '+') {
+      setNumberAtual(parseFloat(firstNum) + parseFloat(numberatual))
+    }
+  }
 
-  //fazer aparecer um tipo de modal explicando cada um dos botões
-
+  // Ui da Calculadora
   return (
-    <div className="text-white translate-y-[50%] w-fit p-8 border-2 border-secondary flex flex-col gap-4 mt-32 items-center m-auto">
-      <h1 className="text-[32px]">
-        Contador utilizando{" "}
-        <span className="text-secondary border-b border-b-secondary">
-          useState
-        </span>
-      </h1>
-      <p className="text-[20px] text-white/50">
-        Este botão foi clicado <span className="text-secondary">{count}</span>{" "}
-        vezes...{" "}
-      </p>
-      <div className="flex gap-5">
-        {" "}
-        <button
-          onClick={soma}
-          className="p-3 bg-secondary text-primary rounded-md hover:scale-110 duration-300 ease-out"
-        >
-          Somar
-        </button>{" "}
-        <button
-          onClick={subtrair}
-          className="p-3 bg-secondary text-primary rounded-md hover:scale-110 duration-300 ease-out"
-        >
-          Diminuir
-        </button>{" "}
-        <button
-          onClick={apagar}
-          className="p-3 bg-secondary text-primary rounded-md hover:scale-110 duration-300 ease-out"
-        >
-          Zerar
-        </button>
-        <button
-          onClick={infoAcrescentar}
-          className="p-3 bg-secondary text-primary rounded-md hover:scale-110 duration-300 ease-out"
-        >
-          Modal
-        </button>
-      </div>
+    <div className="h-screen w-full flex justify-center items-center">
+      <div className="flex flex-col bg-[#232323] p-2 rounded-[10px] border border-white/30">
+        <div className="h-28">
+          <h1 className="text-white pb-1 text-[32px] h-full flex justify-end items-end">
+            {numberatual}
+          </h1>
+        </div>
+        <div className="text-white w-fit grid grid-cols-4 gap-2">
+          <button
+            onClick={resetInput}
+            className="h-10 w-10 rounded-full text-lg bg-white/30"
+          >
+            AC
+          </button>
+          <button
+            onClick={sign}
+            className="h-10 w-10 rounded-full text-lg bg-white/30"
+          >
+            +/-
+          </button>
+          <button
+            onClick={porcentage}
+            className="h-10 w-10 rounded-full text-lg bg-white/30"
+          >
+            %
+          </button>
+          <button
+            onClick={operatorHandle}
+            value={'/'}
+            className="h-10 w-10 rounded-full text-lg bg-[#FF9500]"
+          >
+            /
+          </button>
 
-      {explicacaoAcrescentar && (
-        <Dialog
-          header="Header"
-          visible={explicacaoAcrescentar}
-          style={{ width: "50vw" }}
-          onHide={() => {
-            if (!explicacaoAcrescentar) return;
-            setExplicacaoAcrescentar(false);
-          }}
-        >
-          Modal Berto
-          <br />
-          <br />
-          <p>Aperta o 'X' para fechar o modal...</p>
-        </Dialog>
-      )}
+          <button
+            onClick={inputNumber}
+            value={7}
+            className="h-10 w-10 rounded-full text-lg bg-white/20"
+          >
+            7
+          </button>
+          <button
+            onClick={inputNumber}
+            value={8}
+            className="h-10 w-10 rounded-full text-lg bg-white/20"
+          >
+            8
+          </button>
+          <button
+            onClick={inputNumber}
+            value={9}
+            className="h-10 w-10 rounded-full text-lg bg-white/20"
+          >
+            9
+          </button>
+          <button
+            onClick={operatorHandle}
+            value={'x'}
+            className="h-10 w-10 rounded-full text-lg bg-[#FF9500]"
+          >
+            x
+          </button>
+
+          <button
+            onClick={inputNumber}
+            value={4}
+            className="h-10 w-10 rounded-full text-lg bg-white/20"
+          >
+            4
+          </button>
+          <button
+            onClick={inputNumber}
+            value={5}
+            className="h-10 w-10 rounded-full text-lg bg-white/20"
+          >
+            5
+          </button>
+          <button
+            onClick={inputNumber}
+            value={6}
+            className="h-10 w-10 rounded-full text-lg bg-white/20"
+          >
+            6
+          </button>
+          <button
+            onClick={operatorHandle}
+            value={'-'}
+            className="h-10 w-10 rounded-full text-lg bg-[#FF9500]"
+          >
+            -
+          </button>
+
+          <button
+            onClick={inputNumber}
+            value={1}
+            className="h-10 w-10 rounded-full text-lg bg-white/20"
+          >
+            1
+          </button>
+          <button
+            onClick={inputNumber}
+            value={2}
+            className="h-10 w-10 rounded-full text-lg bg-white/20"
+          >
+            2
+          </button>
+          <button
+            onClick={inputNumber}
+            value={3}
+            className="h-10 w-10 rounded-full text-lg bg-white/20"
+          >
+            3
+          </button>
+          <button
+            onClick={operatorHandle}
+            value="+"
+            className="h-10 w-10 rounded-full text-lg bg-[#FF9500]"
+          >
+            +
+          </button>
+
+          <button className="h-10 w-10 rounded-full text-lg bg-red-800 flex justify-center items-center">
+            <Calculator width={15} />
+          </button>
+          <button
+            onClick={inputNumber}
+            value={0}
+            className="h-10 w-10 rounded-full text-lg bg-white/20"
+          >
+            0
+          </button>
+          <button
+            onClick={inputNumber}
+            value={'.'}
+            className="h-10 w-10 rounded-full text-lg bg-white/20"
+          >
+            ,
+          </button>
+          <button
+            onClick={calculate}
+            className="h-10 w-10 rounded-full text-lg bg-[#FF9500]"
+          >
+            =
+          </button>
+        </div>
+      </div>
     </div>
-  );
+  )
 }
 
-export default Estudos;
+export default Estudos
