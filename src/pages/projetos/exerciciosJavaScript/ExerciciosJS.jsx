@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import img1 from '../../../assets/Imagens/logoHtml.png'
-import img2 from '../../../assets/Imagens/logoCss.png'
-import img3 from '../../../assets/Imagens/logoJS.png'
+// import img1 from '../../../assets/Imagens/logoHtml.png'
+// import img2 from '../../../assets/Imagens/logoCss.png'
+// import img3 from '../../../assets/Imagens/logoJS.png'
 import { ArrowBigUpIcon, Circle, Link, TriangleAlert } from 'lucide-react'
 import { Dialog } from 'primereact/dialog'
 
