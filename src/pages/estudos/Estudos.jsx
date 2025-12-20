@@ -54,7 +54,7 @@ function Estudos() {
   // Ui da Calculadora
   return (
     <div className="h-screen w-full flex justify-center items-center">
-      <div className="flex flex-col bg-[#232323] p-2 rounded-[10px] border border-white/30">
+      <div className="flex flex-col max-w-[200px] overflow-hidden bg-[#232323] p-2 rounded-[10px] border border-white/30">
         <div className="h-28">
           <h1 className="text-white pb-1 text-[32px] h-full flex justify-end items-end">
             {numberatual}
