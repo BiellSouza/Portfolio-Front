@@ -3,200 +3,189 @@ import { Calculator } from 'lucide-react'
 
 function Estudos() {
   // Lógica da Calculadora
-  const [numberatual, setNumberAtual] = useState(0)
-  const [firstNum, setFirstNumb] = useState()
-  const [operator, setOperator] = useState('')
 
+  // constantes (variáveis) da calculadora
+  const [num, setNum] = useState(0)
+  const [operator, setOperator] = useState('')
+  const [oldNum, setOldNum] = useState('')
+
+  // funções da Calculadora
+
+  //---- Pegar número clicado
   function inputNumber(e) {
-    var input = e.target.value
-    if (numberatual === 0) {
-      setNumberAtual(input)
+    var escolha = e.target.value
+
+    if (num === 0) {
+      setNum(escolha)
     } else {
-      setNumberAtual(numberatual + input)
+      setNum(num + escolha)
     }
   }
 
-  function porcentage() {
-    setNumberAtual(numberatual / 100)
+  //---- Resetar numero clicado
+  function reset() {
+    setNum(0)
   }
 
-  function resetInput() {
-    setNumberAtual(0)
+  // ---- Procentagem
+  function porcentagem() {
+    setNum(num / 100)
   }
 
-  function sign() {
-    setNumberAtual(-numberatual)
+  // ---- Inverte sinal
+  function signal() {
+    setNum(-num)
   }
 
+  // ---- Realiza operações
   function operatorHandle(e) {
     var operatorInput = e.target.value
+    setOldNum(num)
+    setNum(0)
     setOperator(operatorInput)
-    setFirstNumb(numberatual)
-    setNumberAtual(0)
   }
 
+  // --- Calcular
   function calculate() {
-    // console.log('calculou!')
-    // console.log(operator)
-    // console.log(numberatual)
-    // console.log(firstNum)
     if (operator === '/') {
-      setNumberAtual(parseFloat(firstNum) / parseFloat(numberatual))
+      setNum(oldNum / num)
     } else if (operator === 'x') {
-      setNumberAtual(parseFloat(firstNum) * parseFloat(numberatual))
+      setNum(oldNum * num)
     } else if (operator === '-') {
-      setNumberAtual(parseFloat(firstNum) - parseFloat(numberatual))
+      setNum(oldNum - num)
     } else if (operator === '+') {
-      setNumberAtual(parseFloat(firstNum) + parseFloat(numberatual))
+      setNum(parseFloat(oldNum) + parseFloat(num))
     }
   }
 
   // Ui da Calculadora
   return (
     <div className="h-screen w-full flex justify-center items-center">
-      <div className="flex flex-col max-w-[200px] overflow-hidden bg-[#232323] p-2 rounded-[10px] border border-white/30">
-        <div className="h-28">
-          <h1 className="text-white pb-1 text-[32px] h-full flex justify-end items-end">
-            {numberatual}
-          </h1>
-        </div>
-        <div className="text-white w-fit grid grid-cols-4 gap-2">
-          <button
-            onClick={resetInput}
-            className="h-10 w-10 rounded-full text-lg bg-white/30"
-          >
-            AC
-          </button>
-          <button
-            onClick={sign}
-            className="h-10 w-10 rounded-full text-lg bg-white/30"
-          >
-            +/-
-          </button>
-          <button
-            onClick={porcentage}
-            className="h-10 w-10 rounded-full text-lg bg-white/30"
-          >
-            %
-          </button>
-          <button
-            onClick={operatorHandle}
-            value={'/'}
-            className="h-10 w-10 rounded-full text-lg bg-[#FF9500]"
-          >
-            /
-          </button>
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-zinc-900 via-black to-zinc-800">
+        <div className="w-80 rounded-2xl bg-zinc-900/80 backdrop-blur-xl border border-white/10 shadow-2xl p-4">
+          {/* Display */}
+          <div className="mb-4 h-20 overflow-hidden rounded-xl bg-black/60 px-4 flex items-center justify-end">
+            <span className="text-3xl font-mono text-white select-none">
+              {num}
+            </span>
+          </div>
 
-          <button
-            onClick={inputNumber}
-            value={7}
-            className="h-10 w-10 rounded-full text-lg bg-white/20"
-          >
-            7
-          </button>
-          <button
-            onClick={inputNumber}
-            value={8}
-            className="h-10 w-10 rounded-full text-lg bg-white/20"
-          >
-            8
-          </button>
-          <button
-            onClick={inputNumber}
-            value={9}
-            className="h-10 w-10 rounded-full text-lg bg-white/20"
-          >
-            9
-          </button>
-          <button
-            onClick={operatorHandle}
-            value={'x'}
-            className="h-10 w-10 rounded-full text-lg bg-[#FF9500]"
-          >
-            x
-          </button>
+          {/* Botões */}
+          <div className="grid grid-cols-4 gap-3">
+            {/* Linha 1 */}
+            <button
+              onClick={reset}
+              className=" h-14 rounded-xl bg-zinc-800 text-white text-lg font-semibold shadow-lg shadow-black/40 hover:bg-zinc-700 transition active:scale-95 active:shadow-inner"
+            >
+              AC
+            </button>
 
-          <button
-            onClick={inputNumber}
-            value={4}
-            className="h-10 w-10 rounded-full text-lg bg-white/20"
-          >
-            4
-          </button>
-          <button
-            onClick={inputNumber}
-            value={5}
-            className="h-10 w-10 rounded-full text-lg bg-white/20"
-          >
-            5
-          </button>
-          <button
-            onClick={inputNumber}
-            value={6}
-            className="h-10 w-10 rounded-full text-lg bg-white/20"
-          >
-            6
-          </button>
-          <button
-            onClick={operatorHandle}
-            value={'-'}
-            className="h-10 w-10 rounded-full text-lg bg-[#FF9500]"
-          >
-            -
-          </button>
+            <button
+              onClick={signal}
+              className=" h-14 rounded-xl bg-zinc-800 text-white text-lg font-semibold shadow-lg shadow-black/40 hover:bg-zinc-700 transition active:scale-95 active:shadow-inner"
+            >
+              +/-
+            </button>
 
-          <button
-            onClick={inputNumber}
-            value={1}
-            className="h-10 w-10 rounded-full text-lg bg-white/20"
-          >
-            1
-          </button>
-          <button
-            onClick={inputNumber}
-            value={2}
-            className="h-10 w-10 rounded-full text-lg bg-white/20"
-          >
-            2
-          </button>
-          <button
-            onClick={inputNumber}
-            value={3}
-            className="h-10 w-10 rounded-full text-lg bg-white/20"
-          >
-            3
-          </button>
-          <button
-            onClick={operatorHandle}
-            value="+"
-            className="h-10 w-10 rounded-full text-lg bg-[#FF9500]"
-          >
-            +
-          </button>
+            <button
+              onClick={porcentagem}
+              className="h-14 rounded-xl bg-zinc-800 text-white text-lg font-semibold shadow-lg shadow-black/40 hover:bg-zinc-700 transition active:scale-95 active:shadow-inner"
+            >
+              %
+            </button>
 
-          <button className="h-10 w-10 rounded-full text-lg bg-red-800 flex justify-center items-center">
-            <Calculator width={15} />
-          </button>
-          <button
-            onClick={inputNumber}
-            value={0}
-            className="h-10 w-10 rounded-full text-lg bg-white/20"
-          >
-            0
-          </button>
-          <button
-            onClick={inputNumber}
-            value={'.'}
-            className="h-10 w-10 rounded-full text-lg bg-white/20"
-          >
-            ,
-          </button>
-          <button
-            onClick={calculate}
-            className="h-10 w-10 rounded-full text-lg bg-[#FF9500]"
-          >
-            =
-          </button>
+            <button
+              onClick={operatorHandle}
+              value="/"
+              className="h-14 rounded-xl bg-indigo-500 text-white text-lg font-semibold shadow-lg shadow-indigo-500/40 hover:bg-indigo-400 transition active:scale-95 active:shadow-inner"
+            >
+              ÷
+            </button>
+
+            {/* Linha 2 */}
+            {['7', '8', '9'].map((n) => (
+              <button
+                key={n}
+                value={n}
+                onClick={inputNumber}
+                className="h-14 rounded-xl bg-zinc-800 text-white text-lg font-semibold shadow-lg shadow-black/40 hover:bg-zinc-700 transition active:scale-95 active:shadow-inner"
+              >
+                {n}
+              </button>
+            ))}
+
+            <button
+              onClick={operatorHandle}
+              value="x"
+              className="h-14 rounded-xl bg-indigo-500 text-white text-lg font-semibold shadow-lg shadow-indigo-500/40 hover:bg-indigo-400 transition active:scale-95 active:shadow-inner"
+            >
+              ×
+            </button>
+
+            {/* Linha 3 */}
+            {['4', '5', '6'].map((n) => (
+              <button
+                key={n}
+                value={n}
+                onClick={inputNumber}
+                className="h-14 rounded-xl bg-zinc-800 text-white text-lg font-semibold shadow-lg shadow-black/40 hover:bg-zinc-700 transition active:scale-95 active:shadow-inner"
+              >
+                {n}
+              </button>
+            ))}
+
+            <button
+              onClick={operatorHandle}
+              value="-"
+              className="h-14 rounded-xl bg-indigo-500 text-white text-lg font-semibold shadow-lg shadow-indigo-500/40 hover:bg-indigo-400 transition active:scale-95 active:shadow-inner"
+            >
+              −
+            </button>
+
+            {/* Linha 4 */}
+            {['1', '2', '3'].map((n) => (
+              <button
+                key={n}
+                value={n}
+                onClick={inputNumber}
+                className="h-14 rounded-xl bg-zinc-800 text-white text-lg font-semibold shadow-lg shadow-black/40 hover:bg-zinc-700 transition active:scale-95 active:shadow-inner"
+              >
+                {n}
+              </button>
+            ))}
+
+            <button
+              onClick={operatorHandle}
+              value="+"
+              className="h-14 rounded-xl bg-indigo-500 text-white text-lg font-semibold shadow-lg shadow-indigo-500/40 hover:bg-indigo-400 transition active:scale-95 active:shadow-inner"
+            >
+              +
+            </button>
+
+            {/* Linha 5 */}
+            <button
+              value={0}
+              onClick={inputNumber}
+              className="col-span-2 h-14 rounded-xl bg-zinc-800 text-white text-lg font-semibold shadow-lg shadow-black/40 hover:bg-zinc-700 transition active:scale-95 active:shadow-inner"
+            >
+              0
+            </button>
+
+            <button
+              onClick={inputNumber}
+              value="."
+              className="h-14 rounded-xl bg-zinc-800 text-white text-lg font-semibold shadow-lg shadow-black/40 hover:bg-zinc-700 transition active:scale-95 active:shadow-inner"
+            >
+              .
+            </button>
+
+            <button
+              onClick={calculate}
+              className="h-14 rounded-xl bg-emerald-500 text-black text-lg font-bold shadow-lg shadow-emerald-500/40 hover:bg-emerald-400 transitio active:scale-95 active:shadow-inner"
+            >
+              =
+            </button>
+          </div>
         </div>
       </div>
     </div>
