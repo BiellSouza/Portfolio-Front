@@ -61,7 +61,7 @@ function Estudos() {
   // Ui da Calculadora
   return (
     <div className="h-screen w-full flex justify-center items-center">
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-zinc-900 via-black to-zinc-800">
+      <div className="min-h-screen flex flex-col gap-6 items-center justify-center bg-gradient-to-br from-zinc-900 via-black to-zinc-800 w-[90%]">
         <div className="w-80 rounded-2xl bg-zinc-900/80 backdrop-blur-xl border border-white/10 shadow-2xl p-4">
           {/* Display */}
           <div className="mb-4 h-20 overflow-hidden rounded-xl bg-black/60 px-4 flex items-center justify-end">
@@ -186,6 +186,20 @@ function Estudos() {
               =
             </button>
           </div>
+        </div>
+        <div className="flex">
+          <h1 className="text-white text-center m-auto w-[90%]">
+            Bem vindos a mais um projeto, aprecie com moderação!
+          </h1>
+        </div>
+        <div className="flex">
+          <h1 className="text-white text-sm text-center m-auto w-full">
+            Desenvolvido pelo{' '}
+            <span className="border-b border-secondary">
+              <span className="text-secondary">Dev Front</span> Biell
+            </span>
+            ...{' '}
+          </h1>
         </div>
       </div>
     </div>
