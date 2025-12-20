@@ -188,15 +188,21 @@ function Estudos() {
           </div>
         </div>
         <div className="flex">
-          <h1 className="text-white text-center m-auto w-[90%]">
-            Bem vindos a mais um projeto, aprecie com moderação!
+          <h1 className="text-white uppercase font-bold text-center m-auto w-full">
+            Calculadora projetada com{' '}
+            <span className="text-secondary">React</span>{' '}
           </h1>
         </div>
+        <div className="text-white/50 justify-center flex text-center m-auto w-fit p-4 border border-white/30 rounded-md text-sm">
+          1- Clique o primeiro numero Digite o operador (+,-,x...) <br />
+          2- Clique o segundo número <br />
+          3- Clique no botão de '=' (botão verde.)
+        </div>
         <div className="flex">
-          <h1 className="text-white text-sm text-center m-auto w-full">
+          <h1 className="text-white/55 text-sm text-center m-auto w-full">
             Desenvolvido pelo{' '}
-            <span className="border-b border-secondary">
-              <span className="text-secondary">Dev Front</span> Biell
+            <span className="border-b border-secondary/60">
+              <span className="text-secondary/60">Dev Front</span> Biell
             </span>
             ...{' '}
           </h1>
