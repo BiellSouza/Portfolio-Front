@@ -30,6 +30,20 @@ function CalculadoraIMC() {
       setResult(imc.toFixed(1))
       setMessage(true)
     }
+
+    if (imc >= 18.5 && imc <= 24.9) {
+      alert(
+        'Seu IMC é considerado bom, posi está entre  18,5 e 24,9 kg. Veja como é o cáculo no quadrado abaixo das informações!'
+      )
+    } else if (imc < 18.5) {
+      alert(
+        'Cuide-se pois seu IMC está abaixo do considerado bom. O indicativo bom começa a partir de 18.5 Kg. Veja como é o cáculo no quadrado abaixo das informações!!'
+      )
+    } else {
+      alert(
+        'Cuide-se pois seu IMC está acima do considerado bom. O indicativo bom chega a no máximo 24.9 kg. Veja como é o cáculo no quadrado abaixo das informações!'
+      )
+    }
   }
 
   function reset() {
