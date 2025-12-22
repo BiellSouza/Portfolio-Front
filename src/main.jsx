@@ -11,6 +11,7 @@ import ListaInterativa from './pages/projetos/ListaInterativa/ListaInterativa'
 import ExerciciosJS from './pages/projetos/exerciciosJavaScript/ExerciciosJS'
 import Financas from './pages/estudos/Financas'
 import Semaforo from './pages/projetos/Semaforo'
+import CalculadoraIMC from './pages/estudos/CalculadoraIMC'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -37,6 +38,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/projeto2" element={<Semaforo />} />
         <Route path="/exercicios" element={<ExerciciosJS />} />
         <Route path="/financeiro" element={<Financas />} />
+        <Route path="/imc" element={<CalculadoraIMC />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
