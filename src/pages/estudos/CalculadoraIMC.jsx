@@ -33,7 +33,7 @@ function CalculadoraIMC() {
 
     if (imc >= 18.5 && imc <= 24.9) {
       alert(
-        'Seu IMC é considerado bom, posi está entre  18,5 e 24,9 kg. Veja como é o cáculo no quadrado abaixo das informações!'
+        'Seu IMC é considerado bom, pois está entre  18,5 e 24,9 kg. Veja como é o cáculo no quadrado abaixo das informações!'
       )
     } else if (imc < 18.5) {
       alert(
