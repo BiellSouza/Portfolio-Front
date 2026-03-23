@@ -32,7 +32,7 @@ export default function ProjectsSection() {
         "Um Projeto simples de sistema para gerenciar louvores, utilizando uma api desenvolvida do zero por mim mesmo onde é possóvel gerenciar acessos, criar eventos e salvar letras de músicas. ",
       technologies: ["Html", "Css", "JavaScript", "React", "Tailwind"],
       image: project3,
-      projectLink: "app-aml.vercel.app",
+      projectLink: "https://app-aml.vercel.app/",
       githubLink: "https://github.com/BiellSouza/APP_AML",
     },
   ];
