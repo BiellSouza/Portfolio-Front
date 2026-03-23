@@ -27,12 +27,12 @@ export default function ProjectsSection() {
     },
     {
       number: "03",
-      title: "Cards Animados",
+      title: "Gerenciamento de Louvor",
       description:
-        "Um Projeto simples de cards animados utilizando a api 'PokéAPI' para gerar os pokémons nos cards. ",
-      technologies: ["Html", "Css", "javaScript"],
+        "Um Projeto simples de sistema para gerenciar louvores, utilizando uma api desenvolvida do zero por mim mesmo onde é possóvel gerenciar acessos, criar eventos e salvar letras de músicas. ",
+      technologies: ["Html", "Css", "JavaScript", "React", "Tailwind"],
       image: project3,
-      projectLink: "/game",
+      projectLink: "https://github.com/BiellSouza/APP_AML",
       githubLink: "https://github.com/BiellSouza/Spck-Buscacep-",
     },
   ];
