@@ -70,12 +70,12 @@ function ExperienceContent() {
         {[
           {
             title: "Estagiário FrontEnd",
-            date: "2024 - 2025",
+            date: "2024 - 2025 • Paper Street Softwares",
             place: "Iniciado em Fevereiro.",
           },
           {
-            title: "Desenvolvedor JavaScript",
-            date: "2025 - Atual",
+            title: "Desenvolvedor JavaScript Jr.",
+            date: "2025 - 2026 • Paper Street Softwares",
             place: "Iniciado em Março.",
           },
         ].map((item, i) => (
